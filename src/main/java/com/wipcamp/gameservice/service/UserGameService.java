@@ -16,12 +16,7 @@ public class UserGameService {
 
     public UserGame findById(String id){
 			Optional<UserGame> userGame = gameRepository.findById(id);
-			if(userGame.isEmpty()){
-				return null;
-			}
-			else{
-				return userGame.get();
-			}
+			return userGame.orElse(null);
     }
 
     public List<UserGame> findAll(){
