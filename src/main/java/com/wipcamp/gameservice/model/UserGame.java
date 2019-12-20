@@ -9,7 +9,7 @@ public class UserGame {
 
     @Id
     @GeneratedValue
-    private long id;
+    private String id;
     private String team;
     public int level;
     public int maxExp;
@@ -20,11 +20,11 @@ public class UserGame {
     public int energy;
     public int maxEnergy;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

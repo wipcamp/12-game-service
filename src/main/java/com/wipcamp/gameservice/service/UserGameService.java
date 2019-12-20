@@ -13,12 +13,14 @@ public class UserGameService {
     @Autowired
     UserGameRepository gameRepository;
 
-    public UserGame findById(int id){
-        return gameRepository.findById(Long.valueOf(id)).get();
+    public UserGame findById(String id){
+        return gameRepository.findById(id).get();
     }
 
     public List<UserGame> findAll(){
         return gameRepository.findAll();
     }
+
+
 
 }
