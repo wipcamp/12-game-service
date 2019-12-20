@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class UserGamePr {
 
 	@Id
-	@GeneratedValue
 	public String id;
 	public String name;
 	public long highScore;

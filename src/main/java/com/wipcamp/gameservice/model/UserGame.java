@@ -9,7 +9,6 @@ public class UserGame {
 
 
 	@Id
-	@GeneratedValue
 	private String id;
 	private String team;
 	public int level;
