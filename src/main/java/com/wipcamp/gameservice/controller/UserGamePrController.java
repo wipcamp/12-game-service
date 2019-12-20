@@ -18,7 +18,7 @@ public class UserGamePrController {
 
  @PostMapping("/gamePr")
 	public UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
- 	if(service.checkUserExist(id)){
+ 	if(service.checkUserExist(id)!=null){
  		return service.findById(id);
 	}else{
  		service.createUserGamePr(id,name);

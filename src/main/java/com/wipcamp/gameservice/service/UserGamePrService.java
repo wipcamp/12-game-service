@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,13 +21,9 @@ public class UserGamePrService {
 		return gamePrRepository.findById(id).get();
 	}
 
-	public boolean checkUserExist(String id){
+	public UserGamePr checkUserExist(String id){
 		Optional<UserGamePr> userGamePr = gamePrRepository.findById(id);
-		if(userGamePr.isEmpty()){
-			return false;
-		}else{
-			return true;
-		}
+		return userGamePr.orElse(null);
 	}
 
 	public void createUserGamePr(String id,String name){
@@ -36,6 +33,7 @@ public class UserGamePrService {
 		userGamePr.setHighScore(0);
 		gamePrRepository.save(userGamePr);
 	}
+
 
 
 }
