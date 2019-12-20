@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserGameService {
@@ -14,7 +15,13 @@ public class UserGameService {
     UserGameRepository gameRepository;
 
     public UserGame findById(String id){
-        return gameRepository.findById(id).get();
+			Optional<UserGame> userGame = gameRepository.findById(id);
+			if(userGame.isEmpty()){
+				return null;
+			}
+			else{
+				return userGame.get();
+			}
     }
 
     public List<UserGame> findAll(){
