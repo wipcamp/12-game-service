@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.List;
+
 @RestController
 public class UserGamePrController {
 
@@ -24,6 +27,16 @@ public class UserGamePrController {
  		service.createUserGamePr(id,name);
  		return service.findById(id);
 	}
+ }
+
+ @GetMapping("/scoreBoard")
+	public List<UserGamePr> getScoreBoard(){
+ 	return service.getScoreBoard();
+ }
+
+ @GetMapping("/profilePr")
+	public List<UserGamePr> getAllProfilePr(){
+ 	return service.findAllProfilePr();
  }
 
 }
