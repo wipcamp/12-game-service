@@ -5,7 +5,10 @@ import com.wipcamp.gameservice.model.UserGamePr;
 import com.wipcamp.gameservice.repository.UserGamePrRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,14 +48,10 @@ public class UserGamePrService {
 		}
 	}
 
+
 	public List<UserGamePr> getScoreBoard(){
-		HashMap<String,Long> scoreBoard = new HashMap<>();
-		List<UserGamePr> allUsergamePrOrderByHighScoreDesc = gamePrRepository.findAll(Sort. by(Sort.Direction.DESC,"highScore"));
-		for (UserGamePr userGamePr : allUsergamePrOrderByHighScoreDesc) {
-			scoreBoard.put(userGamePr.getName(),userGamePr.getHighScore());
-		}
-		System.out.println(allUsergamePrOrderByHighScoreDesc);
-		return allUsergamePrOrderByHighScoreDesc;
+		Page<UserGamePr> page = gamePrRepository.findAll(PageRequest.of(0,5,Sort.by(Sort.Direction.DESC,"highScore")));
+		return page.toList();
 	}
 
 	public List<UserGamePr> findAllProfilePr(){
