@@ -19,21 +19,30 @@ public class UserGamePrService {
 	@Autowired
 	UserGamePrRepository gamePrRepository;
 
-	public UserGamePr findById(String id){
+	private UserGamePr findById(String id){
 		return gamePrRepository.findById(id).get();
 	}
 
-	public UserGamePr checkUserExist(String id){
+	private UserGamePr checkUserExist(String id){
 		Optional<UserGamePr> userGamePr = gamePrRepository.findById(id);
 		return userGamePr.orElse(null);
 	}
 
-	public void createUserGamePr(String id,String name){
+	private void createUserGamePr(String id,String name){
 		UserGamePr userGamePr = new UserGamePr();
 		userGamePr.setId(id);
 		userGamePr.setName(name);
 		userGamePr.setHighScore(0);
 		gamePrRepository.save(userGamePr);
+	}
+
+	public UserGamePr getUserGamePr(String id,String name){
+		if(checkUserExist(id)==null){
+			createUserGamePr(id,name);
+			return this.findById(id);
+		}else{
+			return this.findById(id);
+		}
 	}
 
 	public List<UserGamePr> getScoreBoard(){
@@ -48,6 +57,27 @@ public class UserGamePrService {
 
 	public List<UserGamePr> findAllProfilePr(){
 		return gamePrRepository.findAll();
+	}
+
+	private void addNewScore(String id, long score) {
+		UserGamePr userGamePr = gamePrRepository.findById(id).get();
+		userGamePr.setHighScore(score);
+		gamePrRepository.save(userGamePr);
+	}
+
+	private boolean checkScore(String id,long score){
+		UserGamePr userGamePr = gamePrRepository.findById(id).get();
+		if(score <= userGamePr.getHighScore()){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public void getNewScore(String id,long score){
+		if(checkScore(id,score)){
+			this.addNewScore(id,score);
+		}
 	}
 
 

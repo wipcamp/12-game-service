@@ -19,14 +19,9 @@ public class UserGamePrController {
 	@Autowired
 	UserGamePrService service;
 
- @PostMapping("/gamePr")
+ @PostMapping("/profileGamePr")
 	public UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
- 	if(service.checkUserExist(id)!=null){
- 		return service.findById(id);
-	}else{
- 		service.createUserGamePr(id,name);
- 		return service.findById(id);
-	}
+ 	return service.getUserGamePr(id,name);
  }
 
  @GetMapping("/scoreBoard")
@@ -34,9 +29,14 @@ public class UserGamePrController {
  	return service.getScoreBoard();
  }
 
- @GetMapping("/profilePr")
+ @GetMapping("/allProfileGamePr")
 	public List<UserGamePr> getAllProfilePr(){
  	return service.findAllProfilePr();
+ }
+
+ @PostMapping("/gameOver")
+	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
+ 	service.getNewScore(id,Long.valueOf(score));
  }
 
 }
