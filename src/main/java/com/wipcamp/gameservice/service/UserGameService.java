@@ -1,6 +1,7 @@
 package com.wipcamp.gameservice.service;
 
 import com.wipcamp.gameservice.model.UserGame;
+import com.wipcamp.gameservice.model.UserGamePr;
 import com.wipcamp.gameservice.repository.UserGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,22 +14,46 @@ public class UserGameService {
 
 	private final int USED_SCORE_PER_EXP = 100;
 	private final int EXP_ADDED_PER_LEVEL = 150;
-	private final int ENERGY_ADDED_PER_LEVEL = 2;
+	private final int MAX_ENERGY_ADDED_PER_LEVEL = 2;
 	private final int STR_ADDED_PER_LEVEL = 1;
 	private final int DEX_ADDED_PER_LEVEL = 1;
 	private final int LUK_ADDED_PER_LEVEL = 1;
+	private final int USED_ENERGY_PER_TIME = 15;
+	private final int ENERGY_ADD_PER_TIME = 1;
 
     @Autowired
     UserGameRepository gameRepository;
 
-    public UserGame findById(String id){
-			Optional<UserGame> userGame = gameRepository.findById(id);
-			return userGame.orElse(null);
-    }
+//    private UserGame findById(String id){
+//			Optional<UserGame> userGame = gameRepository.findById(id);
+//			return userGame.orElse(null);
+//    }
 
-    public List<UserGame> findAll(){
-        return gameRepository.findAll();
-    }
+	private UserGame findById(String id){
+		return gameRepository.findById(id).get();
+	}
+
+	private UserGame checkUserExist(String id){
+		Optional<UserGame> userGame = gameRepository.findById(id);
+		return userGame.orElse(null);
+	}
+
+	private void createUserGame(String id){// need user from user_service
+//		UserGame userGame = new UserGame();
+//		userGame.setId(id);
+//		userGame.setName(name);
+//		userGame.setHighScore(0);
+//		gameRepository.save(userGame);
+	}
+
+	public UserGame getUserGame(String id){
+		if(checkUserExist(id)==null){
+			createUserGame(id);
+			return this.findById(id);
+		}else{
+			return this.findById(id);
+		}
+	}
 
     private float convertScoreToExp(long score){
     	float exp =  score/this.USED_SCORE_PER_EXP;
@@ -36,7 +61,7 @@ public class UserGameService {
 		}
 
 	  private void addMaxEnergy(UserGame userGame){
-    	userGame.setMaxEnergy(userGame.getMaxEnergy()+this.ENERGY_ADDED_PER_LEVEL);
+    	userGame.setMaxEnergy(userGame.getMaxEnergy()+this.MAX_ENERGY_ADDED_PER_LEVEL);
 			userGame.setEnergy(userGame.getMaxEnergy());
     }
 
@@ -63,6 +88,35 @@ public class UserGameService {
 				userMaxExp = userGame.getMaxExp();
 			}
 			userGame.setExp(userExpAdded);
+		}
+
+		public boolean useEnergy(String id){
+			UserGame userGame = this.checkUserExist(id);
+			if(userGame==null){
+				return false;
+			}
+			int remainEnergy = userGame.getEnergy();
+			if(remainEnergy>=this.USED_ENERGY_PER_TIME){
+				userGame.setEnergy(remainEnergy-this.USED_ENERGY_PER_TIME);
+				this.gameRepository.save(userGame);
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		public boolean addEnergy(String id){
+			UserGame userGame = this.checkUserExist(id);
+			if(userGame==null){
+				return false;
+			}
+			if(userGame.getEnergy()>=userGame.getMaxEnergy()){
+				return false;
+			}else{
+				userGame.setEnergy(userGame.getEnergy()+this.ENERGY_ADD_PER_TIME);
+				this.gameRepository.save(userGame);
+				return true;
+			}
 		}
 
 		public UserGame addExp(String id,long score){

@@ -11,14 +11,16 @@ public class UserGame {
 	@Id
 	private String id;
 	private String team;
-	public int level;
-	public int maxExp;
-	public float exp;
-	public int str;
-	public int dex;
-	public int luk;
-	public int energy;
-	public int maxEnergy;
+	private int level;
+	private int maxExp;
+	private float exp;
+	private int str;
+	private int dex;
+	private int luk;
+	private int energy;
+	private int maxEnergy;
+	private String name;
+
 
 	public String getId() {
 		return id;
@@ -98,6 +100,14 @@ public class UserGame {
 
 	public void setMaxEnergy(int maxEnergy) {
 		this.maxEnergy = maxEnergy;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }
 

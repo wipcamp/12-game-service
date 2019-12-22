@@ -54,7 +54,7 @@ public class UserGamePrService {
 		return page.toList();
 	}
 
-	public List<UserGamePr> findAllProfilePr(){
+	private List<UserGamePr> findAllProfilePr(){
 		return gamePrRepository.findAll();
 	}
 

@@ -8,9 +8,9 @@ import javax.persistence.Id;
 public class UserGamePr {
 
 	@Id
-	public String id;
-	public String name;
-	public long highScore;
+	private String id;
+	private String name;
+	private long highScore;
 
 	public String getId() {
 		return id;

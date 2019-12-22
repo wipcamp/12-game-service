@@ -20,10 +20,10 @@ public class UserGameController {
     @Autowired
     UserGameService service;
 
-    @GetMapping("/profile")
-    public UserGame getUserGameInformation(@RequestParam(name="id") String id){
-    	return service.findById(id);
-    }
+//    @GetMapping("/profile")
+//    public UserGame getUserGameInformation(@RequestParam(name="id") String id){
+//    	return service.getUserGame(id);
+//    }
 
     @PutMapping("/gameGameOver")
 		public UserGame addExp(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
@@ -36,7 +36,7 @@ public class UserGameController {
         return service.findAll();
     }*/
 
-
+   
 
 
 }
