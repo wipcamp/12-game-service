@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class UserGameService {
 
-	private final int SCORE_PER_EXP = 100;
+	private final int USED_SCORE_PER_EXP = 100;
 	private final int EXP_ADDED_PER_LEVEL = 150;
 	private final int ENERGY_ADDED_PER_LEVEL = 2;
 	private final int STR_ADDED_PER_LEVEL = 1;
@@ -31,7 +31,7 @@ public class UserGameService {
     }
 
     private float convertScoreToExp(long score){
-    	float exp =  score/this.SCORE_PER_EXP;
+    	float exp =  score/this.USED_SCORE_PER_EXP;
     	return exp;
 		}
 
@@ -66,7 +66,11 @@ public class UserGameService {
 		}
 
 		public UserGame addExp(String id,long score){
-    	UserGame userGame = gameRepository.findById(id).get();
+    	Optional<UserGame> userGameLOptional = gameRepository.findById(id);
+    	UserGame userGame = userGameLOptional.orElse(null);
+    	if(userGame==null){
+    		return null;
+			}
     	this.checkLevelUp(userGame,score);
       this.gameRepository.save(userGame);
 			return userGame;
