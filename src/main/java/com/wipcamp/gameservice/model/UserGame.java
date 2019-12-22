@@ -13,7 +13,7 @@ public class UserGame {
 	private String team;
 	public int level;
 	public int maxExp;
-	public int exp;
+	public float exp;
 	public int str;
 	public int dex;
 	public int luk;
@@ -42,6 +42,14 @@ public class UserGame {
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+
+	public float getExp() {
+		return exp;
+	}
+
+	public void setExp(float exp) {
+		this.exp = exp;
 	}
 
 	public int getMaxExp() {
@@ -92,4 +100,5 @@ public class UserGame {
 		this.maxEnergy = maxEnergy;
 	}
 }
+
 

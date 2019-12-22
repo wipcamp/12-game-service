@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,12 +30,12 @@ public class UserGamePrController {
  	return service.getScoreBoard();
  }
 
- @GetMapping("/allProfileGamePr")
+ /*@GetMapping("/allProfileGamePr")
 	public List<UserGamePr> getAllProfilePr(){
  	return service.findAllProfilePr();
- }
+ }*/
 
- @PostMapping("/gameOver")
+ @PutMapping("/gamePrGameOver")
 	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
  	service.getNewScore(id,Long.valueOf(score));
  }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,10 +24,16 @@ public class UserGameController {
     	return service.findById(id);
     }
 
-    @GetMapping("/allProfile")
+    @PutMapping("/gameGameOver")
+		public UserGame addExp(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
+		long scoreLong = Long.valueOf(score);
+		return service.addExp(id,scoreLong);
+		}
+
+    /*@GetMapping("/allProfile")
     public List<UserGame> getAll(){
         return service.findAll();
-    }
+    }*/
 
 
 
