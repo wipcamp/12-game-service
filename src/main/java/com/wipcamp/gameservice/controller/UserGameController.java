@@ -35,10 +35,10 @@ public class UserGameController {
 		return service.addExp(id,scoreLong);
 		}
 
-    @GetMapping("/allProfile")
-    public List<UserGame> getAll(){
-        return service.findAll();
-    }
+//    @GetMapping("/allProfile")
+//    public List<UserGame> getAll(){
+//        return service.findAll();
+//    }
 
 		@RequestMapping("/useEnergy")
 		@ResponseStatus(value = HttpStatus.OK)
