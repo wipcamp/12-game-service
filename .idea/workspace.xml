@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bef6ecc4-6259-446c-8b9b-e496fc5313cf" name="Default Changelist" comment="" />
+    <list default="true" id="bef6ecc4-6259-446c-8b9b-e496fc5313cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12-game-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/12-game-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/controller/UserGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/controller/UserGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/controller/UserGamePrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/controller/UserGamePrController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/model/UserGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/model/UserGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/model/UserGamePr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/model/UserGamePr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/service/UserGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wipcamp/gameservice/service/UserGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/wipcamp/gameservice/ApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1V8w3zNm4EmylY8GozmzWrMs7IF" />
   <component name="ProjectViewState">
@@ -14,6 +36,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -22,7 +49,54 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="StringCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="12-game-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wipcamp.gameservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wipcamp.gameservice" />
+      <option name="MAIN_CLASS_NAME" value="com.wipcamp.gameservice.StringCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringCalculatorTest.testEmptyString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="12-game-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wipcamp.gameservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wipcamp.gameservice" />
+      <option name="MAIN_CLASS_NAME" value="com.wipcamp.gameservice.StringCalculatorTest" />
+      <option name="METHOD_NAME" value="testEmptyString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringCalculatorTest.testOneSingleStringNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="12-game-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wipcamp.gameservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wipcamp.gameservice" />
+      <option name="MAIN_CLASS_NAME" value="com.wipcamp.gameservice.StringCalculatorTest" />
+      <option name="METHOD_NAME" value="testOneSingleStringNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -73,10 +147,25 @@
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="12-game-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.wipcamp.gameservice.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="PORT" value="8090" />
+        <env name="DB_HOST" value="103.86.49.56:3306" />
+        <env name="DB_DATABASE" value="game_service" />
+        <env name="DB_USERNAME" value="user_service" />
+        <env name="DB_PASSWORD" value="Ak3AssdOy7sC" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StringCalculatorTest.testOneSingleStringNumber" />
+        <item itemvalue="JUnit.StringCalculatorTest" />
+        <item itemvalue="JUnit.StringCalculatorTest.testEmptyString" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -101,6 +190,24 @@
       <option name="presentableId" value="Default" />
       <updated>1576647834263</updated>
       <workItem from="1576647838263" duration="54000" />
+      <workItem from="1576825023395" duration="14060000" />
+      <workItem from="1576845694301" duration="524000" />
+      <workItem from="1576903714133" duration="902000" />
+      <workItem from="1576906098478" duration="12061000" />
+      <workItem from="1576982455121" duration="17805000" />
+      <workItem from="1577026720602" duration="295000" />
+      <workItem from="1577071266714" duration="1717000" />
+      <workItem from="1577170124698" duration="429000" />
+      <workItem from="1577262807338" duration="3530000" />
+      <workItem from="1577267769156" duration="101000" />
+      <workItem from="1577275626373" duration="316000" />
+      <workItem from="1577338071068" duration="949000" />
+      <workItem from="1577344479609" duration="2977000" />
+      <workItem from="1577366250427" duration="300000" />
+      <workItem from="1577424720227" duration="1044000" />
+      <workItem from="1578033973545" duration="10182000" />
+      <workItem from="1578294138875" duration="1900000" />
+      <workItem from="1578463517718" duration="4216000" />
     </task>
     <servers />
   </component>
@@ -108,13 +215,119 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="317" y="168" width="806" height="564" key="find.popup" timestamp="1576647905021">
+    <state x="320" y="115" key="#Assign_Data_Sources" timestamp="1577265290746">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="317" y="168" width="806" height="564" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1576647905021" />
-    <state x="301" y="0" key="search.everywhere.popup" timestamp="1576647876518">
+    <state x="320" y="115" key="#Assign_Data_Sources/0.0.1440.900@0.0.1440.900" timestamp="1577265290746" />
+    <state x="320" y="115" key="#File_and_Code_Templates" timestamp="1578130753008">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="301" y="0" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1576647876518" />
+    <state x="320" y="115" key="#File_and_Code_Templates/0.0.1440.900@0.0.1440.900" timestamp="1578130753008" />
+    <state x="320" y="115" key="#Inspections" timestamp="1577264856799">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1577264856799" />
+    <state x="184" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578470666578">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="184" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1578069678211" />
+    <state x="184" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.836@0.23.1440.836" timestamp="1578470666578" />
+    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1578130678008">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1578130678008" />
+    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1577265942671">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="117" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1577265942671" />
+    <state x="533" y="132" key="#com.intellij.ide.util.MemberChooser/0.23.1440.836@0.23.1440.836" timestamp="1576924949795" />
+    <state x="100" y="123" width="1240" height="636" key="DiffContextDialog" timestamp="1576907699021">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="100" y="123" width="1240" height="636" key="DiffContextDialog/0.23.1440.836@0.23.1440.836" timestamp="1576907699021" />
+    <state x="0" y="23" width="720" height="836" key="EnvironmentVariablesDialog" timestamp="1578470664222">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="194" y="406" key="EnvironmentVariablesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578034253665" />
+    <state x="0" y="23" width="720" height="836" key="EnvironmentVariablesDialog/0.23.1440.836@0.23.1440.836" timestamp="1578470664222" />
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom" timestamp="1578418904744">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578213349556" />
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.23.1440.836@0.23.1440.836" timestamp="1578418904744" />
+    <state width="1398" height="215" key="GridCell.Tab.0.center" timestamp="1578418904743">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578213349555" />
+    <state width="1398" height="215" key="GridCell.Tab.0.center/0.23.1440.836@0.23.1440.836" timestamp="1578418904743" />
+    <state width="1398" height="215" key="GridCell.Tab.0.left" timestamp="1578418904742">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578213349555" />
+    <state width="1398" height="215" key="GridCell.Tab.0.left/0.23.1440.836@0.23.1440.836" timestamp="1578418904742" />
+    <state width="1398" height="215" key="GridCell.Tab.0.right" timestamp="1578418904744">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578213349555" />
+    <state width="1398" height="215" key="GridCell.Tab.0.right/0.23.1440.836@0.23.1440.836" timestamp="1578418904744" />
+    <state width="1398" height="215" key="GridCell.Tab.1.bottom" timestamp="1578418904746">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578213349557" />
+    <state width="1398" height="215" key="GridCell.Tab.1.bottom/0.23.1440.836@0.23.1440.836" timestamp="1578418904746" />
+    <state width="1398" height="215" key="GridCell.Tab.1.center" timestamp="1578418904745">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1578213349557" />
+    <state width="1398" height="215" key="GridCell.Tab.1.center/0.23.1440.836@0.23.1440.836" timestamp="1578418904745" />
+    <state width="1398" height="215" key="GridCell.Tab.1.left" timestamp="1578418904744">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1578213349556" />
+    <state width="1398" height="215" key="GridCell.Tab.1.left/0.23.1440.836@0.23.1440.836" timestamp="1578418904744" />
+    <state width="1398" height="215" key="GridCell.Tab.1.right" timestamp="1578418904745">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="1398" height="215" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1578213349557" />
+    <state width="1398" height="215" key="GridCell.Tab.1.right/0.23.1440.836@0.23.1440.836" timestamp="1578418904745" />
+    <state width="1398" height="302" key="GridCell.Tab.2.bottom" timestamp="1577276460065">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577276460065" />
+    <state width="1398" height="268" key="GridCell.Tab.2.bottom/0.23.1440.836@0.23.1440.836" timestamp="1576846246227" />
+    <state width="1398" height="302" key="GridCell.Tab.2.center" timestamp="1577276460063">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1577276460063" />
+    <state width="1398" height="268" key="GridCell.Tab.2.center/0.23.1440.836@0.23.1440.836" timestamp="1576846246226" />
+    <state width="1398" height="302" key="GridCell.Tab.2.left" timestamp="1577276460062">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1577276460062" />
+    <state width="1398" height="268" key="GridCell.Tab.2.left/0.23.1440.836@0.23.1440.836" timestamp="1576846246226" />
+    <state width="1398" height="302" key="GridCell.Tab.2.right" timestamp="1577276460064">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="302" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1577276460064" />
+    <state width="1398" height="268" key="GridCell.Tab.2.right/0.23.1440.836@0.23.1440.836" timestamp="1576846246227" />
+    <state x="397" y="273" key="com.intellij.ide.util.TipDialog" timestamp="1578463518426">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="397" y="273" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1578294140017" />
+    <state x="397" y="273" key="com.intellij.ide.util.TipDialog/0.23.1440.836@0.23.1440.836" timestamp="1578463518426" />
+    <state x="503" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576834207553">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="503" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.836@0.23.1440.836" timestamp="1576834207553" />
+    <state x="317" y="168" width="837" height="564" key="find.popup" timestamp="1578130596822">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="317" y="168" width="837" height="564" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1578130596822" />
+    <state x="317" y="179" width="806" height="524" key="find.popup/0.23.1440.836@0.23.1440.836" timestamp="1576835271180" />
+    <state x="301" y="23" width="670" height="628" key="search.everywhere.popup" timestamp="1578399732711">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="301" y="0" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1577346653354" />
+    <state x="301" y="23" width="670" height="628" key="search.everywhere.popup/0.23.1440.836@0.23.1440.836" timestamp="1578399732711" />
   </component>
 </project>

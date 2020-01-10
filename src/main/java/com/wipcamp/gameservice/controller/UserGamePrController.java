@@ -21,12 +21,12 @@ public class UserGamePrController {
 	UserGamePrService service;
 
  @PostMapping("/profileGamePr")
-	public UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
+	private UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
  	return service.getUserGamePr(id,name);
  }
 
  @GetMapping("/scoreBoard")
-	public List<UserGamePr> getScoreBoard(){
+	private List<UserGamePr> getScoreBoard(){
  	return service.getScoreBoard();
  }
 
@@ -36,7 +36,7 @@ public class UserGamePrController {
  }*/
 
  @PutMapping("/gamePrGameOver")
-	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
+	private void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
  	service.getNewScore(id,Long.valueOf(score));
  }
 

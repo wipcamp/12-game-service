@@ -1,5 +1,6 @@
 package com.wipcamp.gameservice.service;
 
+import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.model.UserGame;
 import com.wipcamp.gameservice.model.UserGamePr;
 import com.wipcamp.gameservice.repository.UserGameRepository;
@@ -48,8 +49,7 @@ public class UserGameService {
 
 	public UserGame getUserGame(String id){
 		if(checkUserExist(id)==null){
-			createUserGame(id);
-			return this.findById(id);
+			return null;
 		}else{
 			return this.findById(id);
 		}
@@ -129,5 +129,7 @@ public class UserGameService {
       this.gameRepository.save(userGame);
 			return userGame;
 		}
+
+
 
 }

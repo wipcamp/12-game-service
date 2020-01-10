@@ -3,6 +3,12 @@ package com.wipcamp.gameservice.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.wipcamp.gameservice.model.Team;
 
 @Entity
 public class UserGame {
@@ -10,7 +16,10 @@ public class UserGame {
 
 	@Id
 	private String id;
-	private String team;
+	@ManyToOne
+	@JoinColumn
+	@JsonManagedReference
+	private Team team;
 	private int level;
 	private int maxExp;
 	private float exp;
@@ -21,6 +30,8 @@ public class UserGame {
 	private int maxEnergy;
 	private String name;
 
+	public UserGame() {
+	}
 
 	public String getId() {
 		return id;
@@ -30,11 +41,11 @@ public class UserGame {
 		this.id = id;
 	}
 
-	public String getTeam() {
+	public Team getTeam() {
 		return team;
 	}
 
-	public void setTeam(String team) {
+	public void setTeam(Team team) {
 		this.team = team;
 	}
 
@@ -109,6 +120,9 @@ public class UserGame {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+
 }
 
 
