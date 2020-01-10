@@ -41,10 +41,10 @@ public class UserGameController {
 //        return service.findAll();
 //    }
 
-		@RequestMapping("/useEnergy")
-		@ResponseStatus(value = HttpStatus.OK)
-		 public void useEnergy(@RequestParam(name="id")String id){
-			 service.useEnergy(id);
-		 }
+//		@RequestMapping("/useEnergy")
+//		@ResponseStatus(value = HttpStatus.OK)
+//		 public void useEnergy(@RequestParam(name="id")String id){
+//			 service.useEnergy(id);
+//		 }
 
 }
