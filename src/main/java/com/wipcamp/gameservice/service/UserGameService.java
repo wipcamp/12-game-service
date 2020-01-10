@@ -30,6 +30,7 @@ public class UserGameService {
 //			return userGame.orElse(null);
 //    }
 
+
 	private UserGame findById(String id){
 		return gameRepository.findById(id).get();
 	}
@@ -130,6 +131,7 @@ public class UserGameService {
 			return userGame;
 		}
 
-
-
+//	public List<UserGame> findAll() {
+//		return gameRepository.findAll();
+//	}
 }
