@@ -7,6 +7,7 @@ import com.wipcamp.gameservice.repository.UserGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -131,7 +132,26 @@ public class UserGameService {
 			return userGame;
 		}
 
-//	public List<UserGame> findAll() {
+	public void setCooldownEnergyTime(String id) {
+		UserGame userGame = this.checkUserExist(id);
+		if(this.checkUserExist(id)!=null){
+			Date date = new Date();
+			date.setHours(date.getHours() + 1);
+			userGame.setCooldownTime(date);
+			this.gameRepository.save(userGame);
+		}
+	}
+
+	public Date getCooldowntime(String id) {
+		UserGame userGame = this.checkUserExist(id);
+		if(userGame!=null){
+			return userGame.getCooldownTime();
+		}else{
+			return null;
+		}
+	}
+
+	//	public List<UserGame> findAll() {
 //		return gameRepository.findAll();
 //	}
 }
