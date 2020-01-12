@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.wipcamp.gameservice.model.Team;
 
+import java.util.Date;
+
 @Entity
 public class UserGame {
 
@@ -29,8 +31,17 @@ public class UserGame {
 	private int energy;
 	private int maxEnergy;
 	private String name;
+	private Date cooldownTime;
 
 	public UserGame() {
+	}
+
+	public Date getCooldownTime() {
+		return cooldownTime;
+	}
+
+	public void setCooldownTime(Date cooldownTime) {
+		this.cooldownTime = cooldownTime;
 	}
 
 	public String getId() {
