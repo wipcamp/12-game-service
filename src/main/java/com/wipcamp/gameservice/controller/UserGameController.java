@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,5 +47,16 @@ public class UserGameController {
 		 public void useEnergy(@RequestParam(name="id")String id){
 			 service.useEnergy(id);
 		 }
+
+		 @RequestMapping("/setCooldownEnergyTime")
+		@ResponseStatus(value = HttpStatus.OK)
+		public void setCooldownEnergyTime(@RequestParam(name="id")String id){
+			service.setCooldownEnergyTime(id);
+		}
+
+		@GetMapping("/getCooldowntime")
+		public Date getCooldowntime(@RequestParam(name="id") String id){
+			return service.getCooldowntime(id);
+		}
 
 }
