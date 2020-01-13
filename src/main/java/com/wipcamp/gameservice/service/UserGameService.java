@@ -20,7 +20,7 @@ public class UserGameService {
 	private final int STR_ADDED_PER_LEVEL = 1;
 	private final int DEX_ADDED_PER_LEVEL = 1;
 	private final int LUK_ADDED_PER_LEVEL = 1;
-	private final int USED_ENERGY_PER_TIME = 15;
+	private final int USED_ENERGY_PER_TIME = 1;
 	private final int ENERGY_ADD_PER_TIME = 1;
 
     @Autowired
@@ -148,6 +148,14 @@ public class UserGameService {
 			return userGame.getCooldownTime();
 		}else{
 			return null;
+		}
+	}
+
+	public void setEnergy(String id, int energy) {
+		UserGame userGame = this.checkUserExist(id);
+		if(userGame!=null){
+			userGame.setEnergy(energy);
+			this.gameRepository.save(userGame);
 		}
 	}
 
