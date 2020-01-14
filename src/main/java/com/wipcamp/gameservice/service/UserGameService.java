@@ -1,6 +1,5 @@
 package com.wipcamp.gameservice.service;
 
-import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.model.UserGame;
 import com.wipcamp.gameservice.model.UserGamePr;
 import com.wipcamp.gameservice.repository.UserGameRepository;

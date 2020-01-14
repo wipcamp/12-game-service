@@ -12,9 +12,6 @@ public class UserGamePr {
 	private String name;
 	private long highScore;
 
-	public UserGamePr() {
-	}
-
 	public String getId() {
 		return id;
 	}

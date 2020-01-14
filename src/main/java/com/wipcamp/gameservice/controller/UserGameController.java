@@ -1,6 +1,5 @@
 package com.wipcamp.gameservice.controller;
 
-import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.model.UserGame;
 import com.wipcamp.gameservice.service.UserGameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +18,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin("https://game.freezer.wip.camp")
+@CrossOrigin("*")
 @RestController
 public class UserGameController {
 
     @Autowired
     UserGameService service;
 
-    @GetMapping("/profile")
+     @GetMapping("/profile")
     public UserGame getUserGameInformation(@RequestParam(name="id") String id){
     	return service.getUserGame(id);
     }
