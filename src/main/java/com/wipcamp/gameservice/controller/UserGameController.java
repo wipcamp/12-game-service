@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin("*")
+@CrossOrigin("https://game.freezer.wip.camp")
 @RestController
 public class UserGameController {
 
