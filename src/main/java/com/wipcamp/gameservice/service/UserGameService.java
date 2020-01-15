@@ -124,7 +124,18 @@ public class UserGameService {
 			}
 		}
 
-		public UserGame addExp(String id,long score){
+	public boolean gameOver(String id, long score) {
+		UserGame userGame = checkUserExist(id);
+		if(userGame==null){
+			return false;
+		}else{
+			userGame.setEnergy(userGame.getEnergy()-USED_ENERGY_PER_TIME);
+			this.gameRepository.save(userGame);
+			return true;
+		}
+	}
+
+		private UserGame addExp(String id,long score){
     	Optional<UserGame> userGameLOptional = gameRepository.findById(id);
     	UserGame userGame = userGameLOptional.orElse(null);
     	if(userGame==null){
@@ -161,7 +172,6 @@ public class UserGameService {
 			this.gameRepository.save(userGame);
 		}
 	}
-
 
 
 	//	public List<UserGame> findAll() {

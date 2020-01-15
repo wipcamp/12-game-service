@@ -35,10 +35,10 @@ public class UserGameController {
     	return service.getUserGame(id);
     }
 
-    @PutMapping("/gameGameOver")
-		private UserGame addExp(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
+    @PutMapping("/gameOver")
+		private ResponseEntity<Boolean> gameOver(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
 		long scoreLong = Long.valueOf(score);
-		return service.addExp(id,scoreLong);
+		return new ResponseEntity<Boolean>(service.gameOver(id,score),HttpStatus.OK);
 		}
 
 //    @GetMapping("/allProfile")
@@ -74,7 +74,7 @@ public class UserGameController {
 				HttpServletResponse response){
 			Cookie cookieState = new Cookie("state", state);
 			Cookie cookieNonce = new Cookie("nonce", nonce);
-			
+
 			cookieState.setHttpOnly(true);
 			response.addCookie(cookieState);
 
