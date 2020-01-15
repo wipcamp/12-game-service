@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -63,5 +67,29 @@ public class UserGameController {
 		public Date getCooldowntime(@RequestParam(name="id") String id){
 			return service.getCooldowntime(id);
 		}
+
+		@GetMapping("/setVerifyCookies")
+	public void setVerifyCookies(@RequestParam(name="state")String state,@RequestParam(name="nonce")String nonce,
+				HttpServletResponse response){
+			Cookie cookieState = new Cookie("state", state);
+			Cookie cookieNonce = new Cookie("nonce", nonce);
+			cookieState.setSecure(true);
+			cookieState.setHttpOnly(true);
+			response.addCookie(cookieState);
+			cookieNonce.setSecure(true);
+			cookieNonce.setHttpOnly(true);
+			response.addCookie(cookieNonce);
+		}
+
+	@GetMapping("/setTokenCookies")
+	public void setTokenCookies(@RequestParam(name="token")String token,
+			HttpServletResponse response){
+		Cookie cookieToken = new Cookie("token", token);
+		cookieToken.setSecure(true);
+		cookieToken.setHttpOnly(true);
+		response.addCookie(cookieToken);
+	}
+
+
 
 }

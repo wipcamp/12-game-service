@@ -5,6 +5,10 @@ import com.wipcamp.gameservice.model.UserGamePr;
 import com.wipcamp.gameservice.repository.UserGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 import java.util.Date;
 import java.util.List;
@@ -157,6 +161,8 @@ public class UserGameService {
 			this.gameRepository.save(userGame);
 		}
 	}
+
+
 
 	//	public List<UserGame> findAll() {
 //		return gameRepository.findAll();
