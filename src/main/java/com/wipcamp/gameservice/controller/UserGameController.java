@@ -4,6 +4,7 @@ import com.wipcamp.gameservice.model.UserGame;
 import com.wipcamp.gameservice.service.UserGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -69,16 +70,17 @@ public class UserGameController {
 		}
 
 		@GetMapping("/setVerifyCookies")
-	public void setVerifyCookies(@RequestParam(name="state")String state,@RequestParam(name="nonce")String nonce,
+	public ResponseEntity<String> setVerifyCookies(@RequestParam(name="state")String state,@RequestParam(name="nonce")String nonce,
 				HttpServletResponse response){
 			Cookie cookieState = new Cookie("state", state);
 			Cookie cookieNonce = new Cookie("nonce", nonce);
-			cookieState.setSecure(true);
+			
 			cookieState.setHttpOnly(true);
 			response.addCookie(cookieState);
-			cookieNonce.setSecure(true);
+
 			cookieNonce.setHttpOnly(true);
 			response.addCookie(cookieNonce);
+			return new ResponseEntity<String>("create verify cookies", HttpStatus.OK);
 		}
 
 	@GetMapping("/setTokenCookies")
