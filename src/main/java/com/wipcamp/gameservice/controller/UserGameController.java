@@ -38,7 +38,7 @@ public class UserGameController {
     @PutMapping("/gameOver")
 		private ResponseEntity<Boolean> gameOver(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
 		long scoreLong = Long.valueOf(score);
-		return new ResponseEntity<Boolean>(service.gameOver(id,score),HttpStatus.OK);
+		return new ResponseEntity<Boolean>(service.gameOver(id,scoreLong),HttpStatus.OK);
 		}
 
 //    @GetMapping("/allProfile")

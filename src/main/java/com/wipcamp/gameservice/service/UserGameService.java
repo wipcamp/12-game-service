@@ -130,6 +130,9 @@ public class UserGameService {
 			return false;
 		}else{
 			userGame.setEnergy(userGame.getEnergy()-USED_ENERGY_PER_TIME);
+			Date date = new Date();
+			date.setHours(date.getHours() + 1);
+			userGame.setCooldownTime(date);
 			this.gameRepository.save(userGame);
 			return true;
 		}
