@@ -129,8 +129,7 @@ public class UserGameService {
 		if(userGame==null){
 			return false;
 		}else{
-			this.useEnergy(id);
-			return true;
+			return this.useEnergy(id);
 		}
 	}
 
