@@ -129,11 +129,7 @@ public class UserGameService {
 		if(userGame==null){
 			return false;
 		}else{
-			userGame.setEnergy(userGame.getEnergy()-USED_ENERGY_PER_TIME);
-			Date date = new Date();
-			date.setHours(date.getHours() + 1);
-			userGame.setCooldownTime(date);
-			this.gameRepository.save(userGame);
+			this.useEnergy(id);
 			return true;
 		}
 	}
@@ -152,10 +148,10 @@ public class UserGameService {
 	public void setCooldownEnergyTime(String id) {
 		UserGame userGame = this.checkUserExist(id);
 		if(this.checkUserExist(id)!=null){
-			Date date = new Date();
-			date.setHours(date.getHours() + 1);
-			userGame.setCooldownTime(date);
-			this.gameRepository.save(userGame);
+				Date newCooldown = new Date();
+				newCooldown.setHours(newCooldown.getHours() + 1);
+				userGame.setCooldownTime(newCooldown);
+				this.gameRepository.save(userGame);
 		}
 	}
 
