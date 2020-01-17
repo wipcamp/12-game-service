@@ -129,7 +129,13 @@ public class UserGameService {
 		if(userGame==null){
 			return false;
 		}else{
-			return this.useEnergy(id);
+			int remainEnrergy = userGame.getEnergy();
+			int maxEnergy = userGame.getMaxEnergy();
+			if(remainEnrergy>=maxEnergy){
+				this.setCooldownEnergyTime(id);
+				return this.useEnergy(id);
+			}
+				return this.useEnergy(id);
 		}
 	}
 
