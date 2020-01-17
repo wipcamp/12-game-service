@@ -132,7 +132,9 @@ public class UserGameService {
 			int remainEnrergy = userGame.getEnergy();
 			int maxEnergy = userGame.getMaxEnergy();
 			if(remainEnrergy>=maxEnergy){
-				this.setCooldownEnergyTime(id,null);
+				Date newCooldown = new Date();
+				newCooldown.setHours(newCooldown.getHours() + 1);
+				this.setCooldownEnergyTime(id,newCooldown.getTime());
 				return this.useEnergy(id);
 			}
 				return this.useEnergy(id);
@@ -150,17 +152,15 @@ public class UserGameService {
 			return userGame;
 		}
 
-	public void setCooldownEnergyTime(String id,Date remainTime) {
+	public Date setCooldownEnergyTime(String id,long remainTime) {
 		UserGame userGame = this.checkUserExist(id);
 		if(this.checkUserExist(id)!=null){
-			if(remainTime==null){
-				Date newCooldown = new Date();
-					newCooldown.setHours(newCooldown.getHours() + 1);
-					this.gameRepository.save(userGame);
-					return;
-			}
-				userGame.setCooldownTime(remainTime);
+				Date newDate = new Date(remainTime);
+				userGame.setCooldownTime(newDate);
 				this.gameRepository.save(userGame);
+				return newDate;
+		}else{
+			return null;
 		}
 	}
 

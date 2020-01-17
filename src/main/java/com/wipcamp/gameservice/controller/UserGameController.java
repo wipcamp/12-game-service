@@ -52,10 +52,10 @@ public class UserGameController {
 			 service.useEnergy(id);
 		 }
 
-		 @RequestMapping("/setCooldownEnergyTime")
+		 @PutMapping("/setCooldownEnergyTime")
 		@ResponseStatus(value = HttpStatus.OK)
-		public void setCooldownEnergyTime(@RequestParam(name="id")String id,@RequestParam(name="remainTime")Date remainTime){
-			service.setCooldownEnergyTime(id,remainTime);
+		public ResponseEntity<Date> setCooldownEnergyTime(@RequestParam(name="id")String id,@RequestParam(name="remainTime")long remainTime){
+			return new ResponseEntity<Date>(service.setCooldownEnergyTime(id,remainTime),HttpStatus.OK);
 		}
 
 	@RequestMapping("/setEnergy")
