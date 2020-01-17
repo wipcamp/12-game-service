@@ -52,11 +52,17 @@ public class UserGameController {
 			 service.useEnergy(id);
 		 }
 
-		 @PutMapping("/setCooldownEnergyTime")
-		@ResponseStatus(value = HttpStatus.OK)
-		public ResponseEntity<Date> setCooldownEnergyTime(@RequestParam(name="id")String id,@RequestParam(name="remainTime")long remainTime){
-			return new ResponseEntity<Date>(service.setCooldownEnergyTime(id,remainTime),HttpStatus.OK);
-		}
+//		 @PutMapping("/setCooldownEnergyTime")
+//		@ResponseStatus(value = HttpStatus.OK)
+//		public ResponseEntity<Date> setCooldownEnergyTime(@RequestParam(name="id")String id,@RequestParam(name="remainTime")long remainTime){
+//			return new ResponseEntity<Date>(service.setCooldownEnergyTime(id,remainTime),HttpStatus.OK);
+//		}
+
+	@PutMapping("/setCooldownEnergyTime")
+	@ResponseStatus(value = HttpStatus.OK)
+	public void setCooldownEnergyTime(@RequestParam(name="id")String id){
+		service.setCooldownEnergyTime(id);
+	}
 
 	@RequestMapping("/setEnergy")
 	@ResponseStatus(value = HttpStatus.OK)
