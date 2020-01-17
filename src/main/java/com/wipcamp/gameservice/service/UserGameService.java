@@ -152,16 +152,26 @@ public class UserGameService {
 			return userGame;
 		}
 
-	public Date setCooldownEnergyTime(String id,long remainTime) {
+//	public Date setCooldownEnergyTime(String id,long remainTime) {
+//		UserGame userGame = this.checkUserExist(id);
+//		if(this.checkUserExist(id)!=null){
+//				Date newDate = new Date(remainTime);
+//				userGame.setCooldownTime(newDate);
+//				this.gameRepository.save(userGame);
+//				return newDate;
+//		}else{
+//			return null;
+//		}
+//	}
+
+	public void setCooldownEnergyTime(String id) {
 		UserGame userGame = this.checkUserExist(id);
 		if(this.checkUserExist(id)!=null){
-				Date newDate = new Date(remainTime);
-				userGame.setCooldownTime(newDate);
-				this.gameRepository.save(userGame);
-				return newDate;
-		}else{
-			return null;
-		}
+			Date newDate = new Date();
+			newDate.setHours(newDate.getHours()+1);
+			userGame.setCooldownTime(newDate);
+			this.gameRepository.save(userGame);
+	}
 	}
 
 	public Date getCooldowntime(String id) {
