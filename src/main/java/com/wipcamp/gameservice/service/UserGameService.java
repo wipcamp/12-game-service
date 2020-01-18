@@ -129,12 +129,12 @@ public class UserGameService {
 		if(userGame==null){
 			return false;
 		}else{
-			int remainEnrergy = userGame.getEnergy();
+			int remainEnergy = userGame.getEnergy();
 			int maxEnergy = userGame.getMaxEnergy();
-			if(remainEnrergy>=maxEnergy){
-				Date newCooldown = new Date();
-				newCooldown.setHours(newCooldown.getHours() + 1);
-				this.setCooldownEnergyTime(id,newCooldown.getTime());
+			if(remainEnergy>=maxEnergy){
+//				Date newCooldown = new Date();
+//				newCooldown.setHours(newCooldown.getHours() + 1);
+//				this.setCooldownEnergyTime(id);
 				return this.useEnergy(id);
 			}
 				return this.useEnergy(id);
