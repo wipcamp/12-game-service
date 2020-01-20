@@ -134,7 +134,7 @@ public class UserGameService {
 			if(remainEnergy>=maxEnergy){
 //				Date newCooldown = new Date();
 //				newCooldown.setHours(newCooldown.getHours() + 1);
-//				this.setCooldownEnergyTime(id);
+				this.setCooldownEnergyTime(id);
 				return this.useEnergy(id);
 			}
 				return this.useEnergy(id);
