@@ -93,6 +93,7 @@ public class UserGameService {
 				userMaxExp = userGame.getMaxExp();
 			}
 			userGame.setExp(userExpAdded);
+			gameRepository.save(userGame);
 		}
 
 		public boolean useEnergy(String id){
@@ -135,9 +136,13 @@ public class UserGameService {
 				Date newCooldown = new Date();
 				newCooldown.setHours(newCooldown.getHours() + 1);
 				this.setCooldownEnergyTime(id,newCooldown.getTime());
-				return this.useEnergy(id);
+				 this.useEnergy(id);
+				 this.checkLevelUp(userGame,score);
+				 return true;
 			}
-				return this.useEnergy(id);
+				this.useEnergy(id);
+			this.checkLevelUp(userGame,score);
+			return true;
 		}
 	}
 
