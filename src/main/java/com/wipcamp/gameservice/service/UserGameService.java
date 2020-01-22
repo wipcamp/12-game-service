@@ -29,11 +29,6 @@ public class UserGameService {
     @Autowired
     UserGameRepository gameRepository;
 
-//    private UserGame findById(String id){
-//			Optional<UserGame> userGame = gameRepository.findById(id);
-//			return userGame.orElse(null);
-//    }
-
 
 	private UserGame findById(String id){
 		return gameRepository.findById(id).get();
@@ -111,20 +106,6 @@ public class UserGameService {
 			}
 		}
 
-		public boolean addEnergy(String id){
-			UserGame userGame = this.checkUserExist(id);
-			if(userGame==null){
-				return false;
-			}
-			if(userGame.getEnergy()>=userGame.getMaxEnergy()){
-				return false;
-			}else{
-				userGame.setEnergy(userGame.getEnergy()+this.ENERGY_ADD_PER_TIME);
-				this.gameRepository.save(userGame);
-				return true;
-			}
-		}
-
 	public boolean gameOver(String id, long score) {
 		UserGame userGame = checkUserExist(id);
 		if(userGame==null){
@@ -156,18 +137,6 @@ public class UserGameService {
       this.gameRepository.save(userGame);
 			return userGame;
 		}
-
-//	public Date setCooldownEnergyTime(String id,long remainTime) {
-//		UserGame userGame = this.checkUserExist(id);
-//		if(this.checkUserExist(id)!=null){
-//				Date newDate = new Date(remainTime);
-//				userGame.setCooldownTime(newDate);
-//				this.gameRepository.save(userGame);
-//				return newDate;
-//		}else{
-//			return null;
-//		}
-//	}
 
 	public void setCooldownEnergyTime(String id,long newDate) {
 		UserGame userGame = this.checkUserExist(id);
