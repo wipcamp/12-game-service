@@ -75,13 +75,34 @@ public class UserGameService {
     	userGame.setLuk(userGame.getLuk()+this.LUK_ADDED_PER_LEVEL);
     }
 
+    public void updateStatus(String id,String statusName,int quantity){
+			UserGame userGame = this.checkUserExist(id);
+			if(userGame!=null){
+				if(userGame.getPoint()>=quantity) {
+					if(statusName.equals("str")){
+						userGame.setStr(userGame.getStr()+quantity);
+						userGame.setPoint(userGame.getPoint()-quantity);
+						gameRepository.save(userGame);
+					}else  if(statusName.equals("dex")){
+						userGame.setDex(userGame.getDex()+quantity);
+						userGame.setPoint(userGame.getPoint()-quantity);
+						gameRepository.save(userGame);
+					}else  if(statusName.equals("lux")){
+						userGame.setLuk(userGame.getLuk()+quantity);
+						userGame.setPoint(userGame.getPoint()-quantity);
+						gameRepository.save(userGame);
+					}
+				}
+			}
+		}
+
 		private void checkLevelUp(UserGame userGame,long score){
 			float exp = this.convertScoreToExp(score);
 			int userMaxExp = userGame.getMaxExp();
 			float userExpAdded = userGame.getExp() + exp;
 			while(userExpAdded>=userMaxExp){
 				userGame.setLevel(userGame.getLevel()+1);
-				this.addStatus(userGame);
+				//this.addStatus(userGame);
 				this.addMaxEnergy(userGame);
 				this.addMaxExp(userGame);
 				userExpAdded = userExpAdded - userMaxExp;
