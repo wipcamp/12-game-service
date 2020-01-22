@@ -30,8 +30,17 @@ public class UserGame {
 	private int luk;
 	private int energy;
 	private int maxEnergy;
+	private int point;
 	private String name;
 	private Date cooldownTime;
+
+	public int getPoint() {
+		return point;
+	}
+
+	public void setPoint(int point) {
+		this.point = point;
+	}
 
 	public UserGame() {
 	}
