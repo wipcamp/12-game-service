@@ -103,12 +103,18 @@ public class UserGameService {
 			while(userExpAdded>=userMaxExp){
 				userGame.setLevel(userGame.getLevel()+1);
 				//this.addStatus(userGame);
+				this.addPoint(userGame);
 				this.addMaxEnergy(userGame);
 				this.addMaxExp(userGame);
 				userExpAdded = userExpAdded - userMaxExp;
 				userMaxExp = userGame.getMaxExp();
 			}
 			userGame.setExp(userExpAdded);
+			gameRepository.save(userGame);
+		}
+
+		public void addPoint(UserGame userGame){
+			userGame.setPoint(userGame.getPoint()+1);
 			gameRepository.save(userGame);
 		}
 
