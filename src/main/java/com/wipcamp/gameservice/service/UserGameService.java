@@ -87,7 +87,7 @@ public class UserGameService {
 						userGame.setDex(userGame.getDex()+quantity);
 						userGame.setPoint(userGame.getPoint()-quantity);
 						gameRepository.save(userGame);
-					}else  if(statusName.equals("lux")){
+					}else  if(statusName.equals("luk")){
 						userGame.setLuk(userGame.getLuk()+quantity);
 						userGame.setPoint(userGame.getPoint()-quantity);
 						gameRepository.save(userGame);
