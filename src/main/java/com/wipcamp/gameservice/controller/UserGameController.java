@@ -58,6 +58,12 @@ public class UserGameController {
 		service.setCooldownEnergyTime(id,newDate);
 	}
 
+	@PutMapping("/updateStatus")
+	@ResponseStatus(value = HttpStatus.OK)
+	public  void updateStatus(@RequestParam(name="id")String id,@RequestParam(name="status")String status,@RequestParam(name="quantity")int quantity){
+     	service.updateStatus(id,status,quantity);
+	}
+
 	@RequestMapping("/setEnergy")
 	@ResponseStatus(value = HttpStatus.OK)
 	public void setEnergy(@RequestParam(name="id")String id,@RequestParam(name="energy")int energy){
