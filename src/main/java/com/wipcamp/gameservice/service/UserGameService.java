@@ -80,15 +80,15 @@ public class UserGameService {
 			if(userGame!=null){
 				if(userGame.getPoint()>=quantity) {
 					if(statusName.equals("str")){
-						userGame.setStr(userGame.getStr()+quantity);
+						userGame.setStr(userGame.getStr()+(this.STR_ADDED_PER_LEVEL*quantity));
 						userGame.setPoint(userGame.getPoint()-quantity);
 						gameRepository.save(userGame);
 					}else  if(statusName.equals("dex")){
-						userGame.setDex(userGame.getDex()+quantity);
+						userGame.setDex(userGame.getDex()+(this.DEX_ADDED_PER_LEVEL*quantity));
 						userGame.setPoint(userGame.getPoint()-quantity);
 						gameRepository.save(userGame);
 					}else  if(statusName.equals("luk")){
-						userGame.setLuk(userGame.getLuk()+quantity);
+						userGame.setLuk(userGame.getLuk()+(this.LUK_ADDED_PER_LEVEL*quantity));
 						userGame.setPoint(userGame.getPoint()-quantity);
 						gameRepository.save(userGame);
 					}
