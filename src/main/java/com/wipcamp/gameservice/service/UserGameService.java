@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +38,7 @@ public class UserGameService {
 		return gameRepository.findById(id).get();
 	}
 
-	private UserGame checkUserExist(String id){
+	public UserGame checkUserExist(String id){
 		Optional<UserGame> userGame = gameRepository.findById(id);
 		return userGame.orElse(null);
 	}

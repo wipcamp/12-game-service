@@ -98,6 +98,17 @@ public class UserGameController {
 		response.addCookie(cookieToken);
 	}
 
+	@GetMapping("/checkUser")
+	public boolean checkUser(@RequestParam(name="id")String id){
+     	if(service.checkUserExist(id)==null){
+     		return false;
+			}else{
+     		return true;
+			}
+	}
+
+
+
 
 
 }
