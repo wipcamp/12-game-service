@@ -44,13 +44,18 @@ public class UserGamePrService {
 			createUserGamePr(id,name);
 			return this.findById(id);
 		}else{
-			return this.findById(id);
+			UserGamePr userGamePr = this.findById(id);
+			if(userGamePr.getName()!=name){
+				userGamePr.setName(name);
+				gamePrRepository.save(userGamePr);
+			}
+			return userGamePr;
 		}
 	}
 
 
 	public List<UserGamePr> getScoreBoard(){
-		Page<UserGamePr> page = gamePrRepository.findAll(PageRequest.of(0,5,Sort.by(Sort.Direction.DESC,"highScore")));
+		Page<UserGamePr> page = gamePrRepository.findAll(PageRequest.of(0,10,Sort.by(Sort.Direction.DESC,"highScore")));
 		return page.toList();
 	}
 
