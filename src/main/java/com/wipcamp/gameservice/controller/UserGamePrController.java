@@ -4,6 +4,7 @@ import com.wipcamp.gameservice.model.UserGamePr;
 import com.wipcamp.gameservice.service.UserGamePrService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 public class UserGamePrController {
 
 	@Autowired
 	UserGamePrService service;
 
- @PostMapping("/profileGamePr")
+ @GetMapping("/profileGamePr")
 	public UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
  	return service.getUserGamePr(id,name);
  }
