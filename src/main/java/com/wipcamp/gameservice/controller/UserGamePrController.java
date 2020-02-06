@@ -20,7 +20,7 @@ public class UserGamePrController {
 	@Autowired
 	UserGamePrService service;
 
- @PostMapping("/profileGamePr")
+ @GetMapping("/profileGamePr")
 	public UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
  	return service.getUserGamePr(id,name);
  }
