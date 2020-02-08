@@ -196,7 +196,7 @@ public class UserGameService {
 	}
 
 
-	//	public List<UserGame> findAll() {
-//		return gameRepository.findAll();
-//	}
+		public List<UserGame> findAll() {
+		return gameRepository.findAll();
+	}
 }

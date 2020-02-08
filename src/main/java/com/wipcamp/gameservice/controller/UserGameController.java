@@ -41,10 +41,10 @@ public class UserGameController {
 		return new ResponseEntity<Boolean>(service.gameOver(id,scoreLong),HttpStatus.OK);
 		}
 
-//    @GetMapping("/allProfile")
-//    public List<UserGame> getAll(){
-//        return service.findAll();
-//    }
+    @GetMapping("/allProfile")
+    public List<UserGame> getAll(){
+        return service.findAll();
+    }
 
 		@RequestMapping("/useEnergy")
 		@ResponseStatus(value = HttpStatus.OK)
