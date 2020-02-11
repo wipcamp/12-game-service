@@ -10,7 +10,7 @@ public class UserGamePr {
 	@Id
 	private String id;
 	private String name;
-	private long highScore;
+	private int highScore;
 
 	public String getId() {
 		return id;
@@ -28,11 +28,11 @@ public class UserGamePr {
 		this.name = name;
 	}
 
-	public long getHighScore() {
+	public int getHighScore() {
 		return highScore;
 	}
 
-	public void setHighScore(long highScore) {
+	public void setHighScore(int highScore) {
 		this.highScore = highScore;
 	}
 }
