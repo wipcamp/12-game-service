@@ -81,5 +81,8 @@ public class UserGamePrService {
 		}
 	}
 
-
+	public int getHighScore(String id) {
+		UserGamePr userGamePr = this.findById(id);
+		return userGamePr.getHighScore();
+	}
 }
