@@ -38,8 +38,8 @@ public class UserGamePrController {
  }*/
 
  @PutMapping("/gamePrGameOver")
-	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
- 	service.getNewScore(id,Long.valueOf(score));
+	public int addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
+ 	return service.getNewScore(id,score);
  }
 
 }
