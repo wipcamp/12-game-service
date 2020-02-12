@@ -1,6 +1,7 @@
 package com.wipcamp.gameservice.controller;
 
 import com.wipcamp.gameservice.model.UserGame;
+import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.service.UserGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,6 +40,11 @@ public class UserGameController {
 		private ResponseEntity<Boolean> gameOver(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
 		long scoreLong = Long.valueOf(score);
 		return new ResponseEntity<Boolean>(service.gameOver(id,scoreLong),HttpStatus.OK);
+		}
+
+		@GetMapping("/scoreBoardCamp")
+		private ResponseEntity<List<Team>> getScoreBoard(){
+     	return new ResponseEntity<List<Team>>(service.getScoreBoard(),HttpStatus.OK);
 		}
 
 //    @GetMapping("/allProfile")

@@ -1,9 +1,12 @@
 package com.wipcamp.gameservice.service;
 
+import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.model.UserGame;
 import com.wipcamp.gameservice.model.UserGamePr;
+import com.wipcamp.gameservice.repository.TeamRepository;
 import com.wipcamp.gameservice.repository.UserGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,6 +35,9 @@ public class UserGameService {
 
     @Autowired
     UserGameRepository gameRepository;
+
+    @Autowired
+		TeamRepository teamRepository;
 
 
 	private UserGame findById(String id){
@@ -195,6 +201,9 @@ public class UserGameService {
 		}
 	}
 
+	public List<Team> getScoreBoard() {
+		return teamRepository.findAll();
+	}
 
 	//	public List<UserGame> findAll() {
 //		return gameRepository.findAll();
