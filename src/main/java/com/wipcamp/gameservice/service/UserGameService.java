@@ -212,14 +212,24 @@ public class UserGameService {
 
 	public List<Items> getDecorationItems() {
 		final String decorationId = "it01";
-		Item_Types itemType = itemTypesRepository.findById(decorationId).get();
-		return itemType.getItemsList();
+		Optional<Item_Types> optionalItem_types = itemTypesRepository.findById(decorationId);
+		if(optionalItem_types.isPresent()) {
+			Item_Types itemType = optionalItem_types.get();
+			return itemType.getItemsList();
+		}else{
+			return null;
+		}
 	}
 
 	public List<Items> getStatusItems() {
 		final String decorationId = "it02";
-		Item_Types itemType = itemTypesRepository.findById(decorationId).get();
-		return itemType.getItemsList();
+		Optional<Item_Types> optionalItem_types = itemTypesRepository.findById(decorationId);
+		if(optionalItem_types.isPresent()) {
+			Item_Types itemType = optionalItem_types.get();
+			return itemType.getItemsList();
+		}else{
+			return null;
+		}
 	}
 
 	public List<Items> getAllUserItems(String id) {
