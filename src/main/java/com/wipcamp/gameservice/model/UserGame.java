@@ -1,16 +1,18 @@
 package com.wipcamp.gameservice.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.wipcamp.gameservice.model.Team;
 
+
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class UserGame {
@@ -33,6 +35,11 @@ public class UserGame {
 	private int point;
 	private String name;
 	private Date cooldownTime;
+	@OneToMany(mappedBy = "userGame_id")
+	@JsonBackReference
+	private List<UserGame_Item> itemList;
+
+
 
 	public int getPoint() {
 		return point;
@@ -141,8 +148,13 @@ public class UserGame {
 		this.name = name;
 	}
 
+	public List<UserGame_Item> getItemList() {
+		return itemList;
+	}
 
-
+	public void setItemList(List<UserGame_Item> itemList) {
+		this.itemList = itemList;
+	}
 }
 
 

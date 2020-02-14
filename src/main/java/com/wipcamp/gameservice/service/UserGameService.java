@@ -1,22 +1,21 @@
 package com.wipcamp.gameservice.service;
 
+import com.wipcamp.gameservice.model.Item_Types;
+import com.wipcamp.gameservice.model.Items;
 import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.model.UserGame;
 import com.wipcamp.gameservice.model.UserGamePr;
+import com.wipcamp.gameservice.model.UserGame_Item;
+import com.wipcamp.gameservice.repository.ItemRepository;
+import com.wipcamp.gameservice.repository.ItemTypesRepository;
 import com.wipcamp.gameservice.repository.TeamRepository;
 import com.wipcamp.gameservice.repository.UserGameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URI;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -38,6 +37,12 @@ public class UserGameService {
 
     @Autowired
 		TeamRepository teamRepository;
+
+    @Autowired
+		ItemRepository itemRepository;
+
+    @Autowired
+	ItemTypesRepository itemTypesRepository;
 
 
 	private UserGame findById(String id){
@@ -203,6 +208,29 @@ public class UserGameService {
 
 	public List<Team> getScoreBoard() {
 		return teamRepository.findAll();
+	}
+
+	public List<Items> getDecorationItems() {
+		final String decorationId = "it01";
+		Item_Types itemType = itemTypesRepository.findById(decorationId).get();
+		return itemType.getItemsList();
+	}
+
+	public List<Items> getStatusItems() {
+		final String decorationId = "it02";
+		Item_Types itemType = itemTypesRepository.findById(decorationId).get();
+		return itemType.getItemsList();
+	}
+
+	public List<Items> getAllUserItems(String id) {
+		Optional<UserGame> userGameOptional = gameRepository.findById(id);
+		if(userGameOptional.isPresent()){
+//			UserGame userGame = userGameOptional.get();
+//			List<UserGame_Item> items = userGame.getItemList();
+			return null;
+		}else{
+			return null;
+		}
 	}
 
 	//	public List<UserGame> findAll() {
