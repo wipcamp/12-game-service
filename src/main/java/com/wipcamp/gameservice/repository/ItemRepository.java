@@ -11,9 +11,6 @@ import java.util.Collection;
 
 public interface ItemRepository extends JpaRepository<Items,String> {
 
-//	@Query(
-//			value = "SELECT * FROM ITEMS i WHERE i.id = \"i01\"",
-//			nativeQuery = true)
-//	Collection<Items> findAllDecorationItems();
+
 
 }

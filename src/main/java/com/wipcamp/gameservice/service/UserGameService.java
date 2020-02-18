@@ -15,6 +15,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -235,9 +236,13 @@ public class UserGameService {
 	public List<Items> getAllUserItems(String id) {
 		Optional<UserGame> userGameOptional = gameRepository.findById(id);
 		if(userGameOptional.isPresent()){
-//			UserGame userGame = userGameOptional.get();
-//			List<UserGame_Item> items = userGame.getItemList();
-			return null;
+			UserGame userGame = userGameOptional.get();
+			List<UserGame_Item> allUserItems = userGame.getItemList();
+			ArrayList<Items> items = new ArrayList<>();
+			for (UserGame_Item userItem:allUserItems) {
+				items.add(userItem.getItem_id());
+			}
+			return items;
 		}else{
 			return null;
 		}
