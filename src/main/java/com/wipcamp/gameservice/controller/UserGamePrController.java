@@ -22,7 +22,7 @@ public class UserGamePrController {
 	@Autowired
 	UserGamePrService service;
 
- @GetMapping("/profileGamePr")
+ @PutMapping("/profileGamePr")
 	public UserGamePr getUserGamePr(@RequestParam(name="id") String id,@RequestParam(name="name") String name){
  	return service.getUserGamePr(id,name);
  }
