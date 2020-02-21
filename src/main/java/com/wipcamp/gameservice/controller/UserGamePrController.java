@@ -42,10 +42,7 @@ public class UserGamePrController {
  	return service.findAllProfilePr();
  }*/
 
-	@GetMapping("/getHighScore")
-	public int gethighScore(@RequestParam(name="id") String id){
-		return service.getHighScore(id);
-	}
+
 
  @PutMapping("/gamePrGameOver")
 	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
