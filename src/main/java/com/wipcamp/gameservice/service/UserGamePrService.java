@@ -63,7 +63,7 @@ public class UserGamePrService {
 		return gamePrRepository.findAll();
 	}
 
-	private int addNewScore(String id, int score) {
+	private void addNewScore(String id, int score) {
 		UserGamePr userGamePr = gamePrRepository.findById(id).get();
 		userGamePr.setHighScore(score);
 		gamePrRepository.save(userGamePr);
@@ -78,6 +78,12 @@ public class UserGamePrService {
 			return this.addNewScore(id,score);
 		}else{
 			return oldHighScore;
+		}
+	}
+
+	public void getNewScore(String id,int score){
+		if(checkScore(id,score)){
+			this.addNewScore(id,score);
 		}
 	}
 

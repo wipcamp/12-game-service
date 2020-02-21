@@ -1,6 +1,8 @@
 package com.wipcamp.gameservice.controller;
 
+import com.wipcamp.gameservice.model.Items;
 import com.wipcamp.gameservice.model.UserGame;
+import com.wipcamp.gameservice.model.Team;
 import com.wipcamp.gameservice.service.UserGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -41,10 +44,15 @@ public class UserGameController {
 		return new ResponseEntity<Boolean>(service.gameOver(id,scoreLong),HttpStatus.OK);
 		}
 
-    @GetMapping("/allProfile")
-    public List<UserGame> getAll(){
-        return service.findAll();
-    }
+		@GetMapping("/scoreBoardCamp")
+		private ResponseEntity<List<Team>> getScoreBoard(){
+     	return new ResponseEntity<List<Team>>(service.getScoreBoard(),HttpStatus.OK);
+		}
+
+//    @GetMapping("/allProfile")
+//    public List<UserGame> getAll(){
+//        return service.findAll();
+//    }
 
 		@RequestMapping("/useEnergy")
 		@ResponseStatus(value = HttpStatus.OK)
@@ -75,27 +83,19 @@ public class UserGameController {
 			return service.getCooldowntime(id);
 		}
 
-		@GetMapping("/setVerifyCookies")
-	public ResponseEntity<String> setVerifyCookies(@RequestParam(name="state")String state,@RequestParam(name="nonce")String nonce,
-				HttpServletResponse response){
-			Cookie cookieState = new Cookie("state", state);
-			Cookie cookieNonce = new Cookie("nonce", nonce);
+ @GetMapping("/getDecorationItems")
+ private ResponseEntity<List<Items>> getAllDecorationItems(){
+     	return new ResponseEntity<List<Items>>(service.getDecorationItems(),HttpStatus.OK);
+ }
 
-			cookieState.setHttpOnly(true);
-			response.addCookie(cookieState);
+	@GetMapping("/getStatusItems")
+	private ResponseEntity<List<Items>> getAllStatusItems(){
+		return new ResponseEntity<List<Items>>(service.getStatusItems(),HttpStatus.OK);
+	}
 
-			cookieNonce.setHttpOnly(true);
-			response.addCookie(cookieNonce);
-			return new ResponseEntity<String>("create verify cookies", HttpStatus.OK);
-		}
-
-	@GetMapping("/setTokenCookies")
-	public void setTokenCookies(@RequestParam(name="token")String token,
-			HttpServletResponse response){
-		Cookie cookieToken = new Cookie("token", token);
-		cookieToken.setSecure(true);
-		cookieToken.setHttpOnly(true);
-		response.addCookie(cookieToken);
+	@GetMapping("/getUserItems")
+	private ResponseEntity<List<Items>> getAllUserItems(@RequestParam(name="id")String id){
+     	return new ResponseEntity<List<Items>>(service.getAllUserItems(id),HttpStatus.OK);
 	}
 
 	@GetMapping("/checkUser")
