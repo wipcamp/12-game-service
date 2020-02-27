@@ -51,10 +51,6 @@ public boolean checkUserPr(@RequestParam(name="id")String id){
 	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
  	service.getNewScore(id,score);
  }
-
- @GetMapping("delete")
-	public void delete(){
-	service.delete();
- }
+ 
 
 }

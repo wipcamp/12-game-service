@@ -84,9 +84,4 @@ public class UserGamePrService {
 		return gamePrRepository.findById(id).isPresent();
 	}
 
-	public void delete() {
-		gamePrRepository.deleteAll();
-
-
-	}
 }
