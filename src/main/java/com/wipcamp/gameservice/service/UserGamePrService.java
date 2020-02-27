@@ -83,4 +83,11 @@ public class UserGamePrService {
 	public boolean checkUserPr(String id) {
 		return gamePrRepository.findById(id).isPresent();
 	}
+
+	public void delete() {
+		UserGamePr userGamePr = gamePrRepository.findById("Uaceff1fcb505e79d4e06d9d95deabbbb").get();
+		gamePrRepository.delete(userGamePr);
+
+
+	}
 }

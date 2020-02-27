@@ -27,7 +27,7 @@ public class UserGamePrController {
  	return service.getUserGamePr(id,name);
  }
 
- @GetMapping("/scoreBoard")
+ @PostMapping("/scoreBoard")
 	public List<UserGamePr> getScoreBoard(){
  	return service.getScoreBoard();
  }
@@ -50,6 +50,11 @@ public boolean checkUserPr(@RequestParam(name="id")String id){
  @PutMapping("/gamePrGameOver")
 	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){
  	service.getNewScore(id,score);
+ }
+
+ @GetMapping("delete")
+	public void delete(){
+	service.delete();
  }
 
 }
