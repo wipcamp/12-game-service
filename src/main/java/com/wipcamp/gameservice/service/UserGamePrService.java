@@ -81,6 +81,6 @@ public class UserGamePrService {
 	}
 
 	public boolean checkUserPr(String id) {
-		return gamePrRepository.existsById(id);
+		return gamePrRepository.findById(id).isPresent();
 	}
 }
