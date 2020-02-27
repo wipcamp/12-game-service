@@ -42,7 +42,10 @@ public class UserGamePrController {
  	return service.findAllProfilePr();
  }*/
 
-
+@GetMapping("/checkUserPr")
+public boolean checkUserPr(@RequestParam(name="id")String id){
+	return service.checkUserPr(id);
+}
 
  @PutMapping("/gamePrGameOver")
 	public void addScore(@RequestParam(name="id")String id,@RequestParam(name="score")int score){

@@ -45,10 +45,6 @@ public class UserGamePrService {
 			return this.findById(id);
 		}else{
 			UserGamePr userGamePr = this.findById(id);
-			if(userGamePr.getName()!=name){
-				userGamePr.setName(name);
-				gamePrRepository.save(userGamePr);
-			}
 			return userGamePr;
 		}
 	}
@@ -82,5 +78,9 @@ public class UserGamePrService {
 	public int getHighScore(String id) {
 		UserGamePr userGamePr = this.findById(id);
 		return userGamePr.getHighScore();
+	}
+
+	public boolean checkUserPr(String id) {
+		return gamePrRepository.existsById(id);
 	}
 }
