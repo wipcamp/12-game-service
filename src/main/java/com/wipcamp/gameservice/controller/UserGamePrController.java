@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.List;
 
-@CrossOrigin("https://12-gamepr.freezer.wip.camp")
+@CrossOrigin("https://wip.camp")
 @RestController
 public class UserGamePrController {
 
